@@ -9,6 +9,9 @@ jobs:
   build:
     name: clingo ${{ matrix.python-version }} ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash -el {0} 
     strategy:
       fail-fast: false
       matrix:
@@ -24,6 +27,7 @@ jobs:
       with:
         auto-update-conda: true
         activate-environment: fun
+        channel-priority: strict
         channels: conda-forge
         python-version: ${{ matrix.python-version }}
 
