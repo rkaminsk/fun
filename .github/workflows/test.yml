@@ -20,11 +20,14 @@ jobs:
       with:
         submodules: recursive
 
-    - uses: actions/setup-python@v5
+    - uses: conda-incubator/setup-miniconda@v3
       with:
-        python-version: '3.10' 
+        auto-update-conda: true
+        activate-environment: fun
+        channels: conda-forge
+        python-version: ${{ matrix.python-version }}
 
     - run: |
-        pip install cffi
+        conda install -y cffi
         python gen.py
         python fun.py

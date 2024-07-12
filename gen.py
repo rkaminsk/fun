@@ -12,7 +12,7 @@ ffibuilder.set_source("_fun", """
 void fun(int n, int *res, ...) {
     va_list args;
     va_start(args, res);
-    *res = va_arg(args, int);
+    *res = *va_arg(args, int*);
     va_end(args);
 }
 """)
