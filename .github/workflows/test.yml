@@ -25,5 +25,6 @@ jobs:
         python-version: '3.10' 
 
     - run: |
+        pip install cffi
         python gen.py
         python fun.py
