@@ -1,4 +1,4 @@
-name: fun
+name: test with host python
 
 on:
   push:

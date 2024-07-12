@@ -1,4 +1,4 @@
-name: fun
+name: test with conda python
 
 on:
   push:
