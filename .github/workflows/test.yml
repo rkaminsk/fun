@@ -7,7 +7,7 @@ on:
 
 jobs:
   host:
-    name: clingo ${{ matrix.python-version }} ${{ matrix.os }}
+    name: host ${{ matrix.python-version }} ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
