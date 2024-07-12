@@ -1,0 +1,29 @@
+name: fun
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: clingo ${{ matrix.python-version }} ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
+        python-version: ['3.11']
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10' 
+
+    - run: |
+        python gen.py
+        python fun.py
