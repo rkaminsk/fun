@@ -9,9 +9,6 @@ jobs:
   build:
     name: clingo ${{ matrix.python-version }} ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    defaults:
-      run:
-        shell: bash -el {0} 
     strategy:
       fail-fast: false
       matrix:
